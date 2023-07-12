@@ -12,14 +12,16 @@ $(function () {
   var scheduleContainer = $('#schedule')
 
   function saveTask (event) {
-    event.stopPropagation()
     event.preventDefault();
 
-
     var saveBtnClicked = $(event.target);
-    var taskTextBox = saveBtnClicked.siblings('#hr9-text');
-    // console.log(taskTextBox.val);
-    
+    if (saveBtnClicked.attr('aria-hidden') == "true") {
+      var taskTextBox = saveBtnClicked.parent().siblings('textarea');
+    }
+    else {
+      var taskTextBox = saveBtnClicked.siblings('textarea');
+    }
+
     var taskTextBoxValue = taskTextBox.val();
     
     console.log(taskTextBoxValue);
@@ -27,7 +29,7 @@ $(function () {
 
   }
 
-  
+  // $(".saveBtn").on('click', saveTask);
   scheduleContainer.on('click', '.saveBtn', saveTask);
 
 
@@ -41,6 +43,10 @@ $(function () {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
+
+  //var timeBlock = saveBtnClicked.parent().attr("id")
+  // $(".saveBtn").on('click', saveTask);
+  //localStorage.setItem(timeBlock,taskTextBox)
   //
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
