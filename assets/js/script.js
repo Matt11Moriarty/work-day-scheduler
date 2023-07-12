@@ -11,20 +11,34 @@ $(function () {
   //
   var scheduleContainer = $('#schedule')
 
+  //how do i loop through 9-5
+  function getTask () {
+    for (i=0 ; i < 9; i++) {
+      textBox = $(`textarea[id="hr${i}-text"]`)
+      localStorage.getItem(``)
+    }
+  }
+
   function saveTask (event) {
     event.preventDefault();
 
     var saveBtnClicked = $(event.target);
-    if (saveBtnClicked.attr('aria-hidden') == "true") {
+    if (saveBtnClicked.is('i')) {
       var taskTextBox = saveBtnClicked.parent().siblings('textarea');
+      var taskId = saveBtnClicked.parent().parent().attr('id');
     }
     else {
       var taskTextBox = saveBtnClicked.siblings('textarea');
+      var taskId = saveBtnClicked.parent().attr('id');
     }
 
     var taskTextBoxValue = taskTextBox.val();
+
     
+    // localStorage.setItem()
     console.log(taskTextBoxValue);
+    console.log(taskId);
+    localStorage.setItem(taskId, taskTextBoxValue);
 
 
   }
@@ -44,9 +58,6 @@ $(function () {
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
 
-  //var timeBlock = saveBtnClicked.parent().attr("id")
-  // $(".saveBtn").on('click', saveTask);
-  //localStorage.setItem(timeBlock,taskTextBox)
   //
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
