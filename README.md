@@ -56,7 +56,7 @@ App URL: https://matt11moriarty.github.io/work-day-scheduler/
 5. If you would like to remove a saved task, simply clear out the field and hit the save button. 
 
 
-![alt text](./assets/images/workday-scheduler.gif)
+![alt text](./assets/images/work-day-scheduler.gif)
 
 
 ## Credits
