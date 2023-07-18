@@ -1,4 +1,8 @@
 
+ var today = dayjs().format('dddd, MMMM D')
+
+ $('#todays-date').text(today);
+  
   workDay = [
     {
       "hour": 9,
