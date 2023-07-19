@@ -68,7 +68,8 @@ Resources:
 3. Dayjs: https://day.js.org/docs/en/parse/now
 4. Bootstrap: https://getbootstrap.com/
 5. Jquery: https://jquery.com/
-
+6. Starter Code: https://github.com/coding-boot-camp/crispy-octo-meme
+   
 ## License
 
 N/A
